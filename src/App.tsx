@@ -8,6 +8,7 @@ import { DefaultInput } from './components/DefaultInput'
 import { Cycles } from './components/Cycles'
 import { DefaultButton } from './components/DefaultButton'
 import { PlayCircleIcon } from 'lucide-react'
+import { Footer } from './components/Footer'
 
 export function App() {
 
@@ -45,7 +46,7 @@ export function App() {
         </form>
       </Container>
       <Container>
-        aqui
+        <Footer />
       </Container>
     </>
   )
