@@ -55,5 +55,13 @@ export function Menu() {
     >
       <SunIcon />
     </a>
+    <a className={styles.menuLink}
+      href='#'
+      aria-label='Mudar Tema'
+      title='Mudar Tema'
+      onClick={handleThemeChange}
+    >
+      <SunIcon />
+    </a>
   </nav>
 }
