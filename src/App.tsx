@@ -9,10 +9,10 @@ import { Cycles } from './components/Cycles'
 import { DefaultButton } from './components/DefaultButton'
 import { PlayCircleIcon } from 'lucide-react'
 import { Footer } from './components/Footer'
-import { useIntl } from 'react-intl'
+//import { useIntl } from 'react-intl'
 
 export function App() {
-  const { formatMessage } = useIntl();
+  //const { formatMessage } = useIntl();
 
   return (
     <>
@@ -30,9 +30,6 @@ export function App() {
 
       <Container>
         <form className='form' action="">
-          <div>
-            <h1>{formatMessage({ id: "teste"})}</h1>
-          </div>
           <div className='formRow'>
             <DefaultInput id='meuInput' labelText='Task' type='text' placeholder='digite algo' />
           </div>
