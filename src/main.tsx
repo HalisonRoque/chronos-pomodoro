@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+/*import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { IntlProvider } from 'react-intl';
 import { App } from './App.tsx';
@@ -16,4 +16,18 @@ createRoot(document.getElementById('root')!).render(
       <App />
     </IntlProvider>
   </StrictMode>
+);*/
+
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { App } from './App.tsx';
+import { LanguageProvider } from './shared/localization/LanguageProvider.tsx';
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
+  </StrictMode>
 );
+

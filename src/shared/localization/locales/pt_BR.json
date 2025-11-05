@@ -1,3 +1,9 @@
 {
-  "teste": "engraçado demais"
+  "input.task": "Tarefa",
+  "input.placeholder": "Digite algo...",
+  "menu.go.home": "Ir para a Home",
+  "menu.historico": "Ver Historico",
+  "menu.settings": "Configurações",
+  "menu.change.theme": "Mudar Tema",
+  "menu.change.languages": "Mudar idioma"
 }
