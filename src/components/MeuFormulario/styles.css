@@ -1,0 +1,98 @@
+/*Container principal do formulário*/
+.container {
+    /*Fonte padrão*/
+    font-family: Arial, sans-serif;
+
+    /*Define a largura máxima*/
+    max-width: 400px;
+
+    /*Cor de fundo*/
+    background-color: #a7a1a1;
+
+    /*Centraliza a container horizontalmente*/
+    margin: 40px auto;
+
+    /*Espaçamento interno*/
+    padding: 20px;
+
+    /*Arredonda as bordas*/
+    border-radius: 8px;
+}
+
+/* Estilo do título */
+h2 {
+  /* Centraliza o texto */
+  text-align: center;
+
+  /* Espaçamento abaixo do título */
+  margin-bottom: 16px;
+}
+
+/* Estilo do formulário */
+form {
+  /* Usa flexbox */
+  display: flex;
+
+  /* Organiza os elementos em coluna */
+  flex-direction: column;
+
+  /* Espaço entre os elementos */
+  gap: 12px;
+}
+
+/* Estilo dos inputs */
+input {
+  /* Espaçamento interno */
+  padding: 10px;
+
+  /* Bordas arredondadas */
+  border-radius: 4px;
+
+  /* Borda cinza clara */
+  border: 1px solid #ccc;
+
+  /* Tamanho da fonte */
+  font-size: 14px;
+}
+
+/* Estilo do botão */
+button {
+  /* Espaçamento interno */
+  padding: 10px;
+
+  /* Cor de fundo do botão */
+  background: #4f46e5;
+
+  /* Cor do texto */
+  color: white;
+
+  /* Remove a borda padrão */
+  border: none;
+
+  /* Bordas arredondadas */
+  border-radius: 4px;
+
+  /* Mostra o cursor de mão ao passar o mouse */
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+  /* Cor um pouco mais escura */
+  background: #4338ca;
+}
+
+/* Caixa onde aparecem os dados enviados */
+.result {
+  /* Espaçamento acima */
+  margin-top: 20px;
+
+  /* Espaçamento interno */
+  padding: 12px;
+
+  /* Cor de fundo suave */
+  background: #e0e7ff;
+
+  /* Bordas arredondadas */
+  border-radius: 6px;
+}
