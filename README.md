@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+⏱️ Chronos Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida com React + Vite que implementa a técnica Pomodoro para aumentar produtividade, foco e organização do tempo.
 
-Currently, two official plugins are available:
+🚀 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O Chronos Pomodoro é um timer inteligente baseado na técnica Pomodoro, onde você alterna períodos de foco com pausas estratégicas.
 
-## React Compiler
+A aplicação foi criada com foco em:
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Performance (graças ao Vite ⚡)
+Interface simples e intuitiva
+Experiência fluida para o usuário
+🧠 Técnica Pomodoro
 
-## Expanding the ESLint configuration
+A técnica consiste em ciclos de:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+⏳ 25 minutos de foco
+☕ 5 minutos de descanso
+🔁 Após alguns ciclos, uma pausa maior
+🛠️ Tecnologias utilizadas
+React
+Vite
+TypeScript
+CSS / CSS Modules / Styled Components
+📂 Estrutura do projeto
+Chronos-Pomodoro/
+├── public/
+├── src/
+│   ├── components/
+│   ├── global.css
+│   └── App.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+⚙️ Como rodar o projeto
+1. Clone o repositório
+git clone https://github.com/seu-usuario/chronos-pomodoro.git
+2. Acesse a pasta do projeto
+cd chronos-pomodoro
+3. Instale as dependências
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+ou
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+yarn
+4. Execute o projeto
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+ou
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+yarn dev
+5. Acesse no navegador
+http://localhost:5173
+📦 Scripts disponíveis
+npm run dev      # Inicia o servidor de desenvolvimento
+npm run build    # Gera build de produção
+npm run preview  # Visualiza o build
+✨ Funcionalidades
+⏱️ Timer Pomodoro
+🔁 Alternância entre foco e descanso
+▶️ Iniciar / pausar / resetar ciclo
+🔔 Alertas sonoros (se implementado)
+📊 (Opcional) Histórico de ciclos
+🎯 Melhorias futuras
+Persistência com LocalStorage
+Notificações no navegador
+Temas (dark/light)
+Customização do tempo
+Estatísticas de produtividade
+📸 Preview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+<img width="850" height="905" alt="image" src="https://github.com/user-attachments/assets/2e575997-910c-49ab-b287-886056e4c12e" />
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+🤝 Contribuição
+
+Contribuições são bem-vindas!
+
+# Fork o projeto
+# Crie uma branch
+git checkout -b minha-feature
+
+# Commit
+git commit -m "feat: minha nova feature"
+
+# Push
+git push origin minha-feature
+📄 Licença
+
+Este projeto está sob a licença MIT.
