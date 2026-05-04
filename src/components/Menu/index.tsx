@@ -1,15 +1,31 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useLanguage } from '../../shared/localization/LanguageProvider';
-import { HistoryIcon, HouseIcon, LanguagesIcon, SettingsIcon, SunIcon } from 'lucide-react';
+import {
+  HistoryIcon,
+  HouseIcon,
+  LanguagesIcon,
+  SettingsIcon,
+  SunIcon,
+  MoonIcon,
+} from 'lucide-react';
 import { useIntl } from 'react-intl'
 
 type AvailableThemes = 'dark' | 'light';
 
 export function Menu() {
-  const [theme, setTheme] = useState<AvailableThemes>('dark');
+  // const [theme, setTheme] = useState<AvailableThemes>('dark');
+  const [theme, setTheme] = useState<AvailableThemes>(() => {
+    const storageTheme = (localStorage.getItem('theme') as AvailableThemes) || 'dark';
+    return storageTheme;
+  })
   const { toggleLocale } = useLanguage();
   const { formatMessage } = useIntl();
+
+  const nextThemeIcon = {
+    dark: <SunIcon />,
+    light: <MoonIcon />,
+  };
 
   function handleThemeChange(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     event.preventDefault();
@@ -18,15 +34,11 @@ export function Menu() {
       const nextTheme = prevTheme === 'dark' ? 'light' : 'dark'
       return nextTheme;
     })
-    console.log('clicado');
   }
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-
-    return () => {
-      console.log('Olha, esse componete será atualizado');
-    }
+    localStorage.setItem('theme', theme);
   }, [theme])
 
   return <nav className={styles.menu}>
@@ -57,7 +69,7 @@ export function Menu() {
       title={formatMessage({ id: "menu.change.theme" })}
       onClick={handleThemeChange}
     >
-      <SunIcon />
+      {nextThemeIcon[theme]}
     </a>
     <a
       className={styles.menuLink}
