@@ -1,91 +1,54 @@
-⏱️ Chronos Pomodoro
+# React + TypeScript + Vite
 
-Aplicação web desenvolvida com React + Vite que implementa a técnica Pomodoro para aumentar produtividade, foco e organização do tempo.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-🚀 Sobre o projeto
+Currently, two official plugins are available:
 
-O Chronos Pomodoro é um timer inteligente baseado na técnica Pomodoro, onde você alterna períodos de foco com pausas estratégicas.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-A aplicação foi criada com foco em:
+## Expanding the ESLint configuration
 
-Performance (graças ao Vite ⚡)
-Interface simples e intuitiva
-Experiência fluida para o usuário
-🧠 Técnica Pomodoro
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-A técnica consiste em ciclos de:
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-⏳ 25 minutos de foco
-☕ 5 minutos de descanso
-🔁 Após alguns ciclos, uma pausa maior
-🛠️ Tecnologias utilizadas
-React
-Vite
-TypeScript
-CSS / CSS Modules / Styled Components
-📂 Estrutura do projeto
-Chronos-Pomodoro/
-├── public/
-├── src/
-│   ├── components/
-│   ├── global.css
-│   └── App.jsx
-├── index.html
-├── package.json
-└── vite.config.js
-⚙️ Como rodar o projeto
-1. Clone o repositório
-git clone https://github.com/seu-usuario/chronos-pomodoro.git
-2. Acesse a pasta do projeto
-cd chronos-pomodoro
-3. Instale as dependências
-npm install
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-ou
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-yarn
-4. Execute o projeto
-npm run dev
-
-ou
-
-yarn dev
-5. Acesse no navegador
-http://localhost:5173
-📦 Scripts disponíveis
-npm run dev      # Inicia o servidor de desenvolvimento
-npm run build    # Gera build de produção
-npm run preview  # Visualiza o build
-✨ Funcionalidades
-⏱️ Timer Pomodoro
-🔁 Alternância entre foco e descanso
-▶️ Iniciar / pausar / resetar ciclo
-🔔 Alertas sonoros (se implementado)
-📊 (Opcional) Histórico de ciclos
-🎯 Melhorias futuras
-Persistência com LocalStorage
-Notificações no navegador
-Temas (dark/light)
-Customização do tempo
-Estatísticas de produtividade
-📸 Preview
-
-<img width="850" height="905" alt="image" src="https://github.com/user-attachments/assets/2e575997-910c-49ab-b287-886056e4c12e" />
-
-
-🤝 Contribuição
-
-Contribuições são bem-vindas!
-
-# Fork o projeto
-# Crie uma branch
-git checkout -b minha-feature
-
-# Commit
-git commit -m "feat: minha nova feature"
-
-# Push
-git push origin minha-feature
-📄 Licença
-
-Este projeto está sob a licença MIT.
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
